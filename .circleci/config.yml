@@ -75,7 +75,7 @@ commands:
             rvm install "$RUBY_VERSION"
             rvm use "$RUBY_VERSION"
 
-            readonly ruby_path="$(rvm $PARAM_VERSION 1> /dev/null 2> /dev/null && rvm env --path)"
+            readonly ruby_path="$(rvm $RUBY_VERSION 1> /dev/null 2> /dev/null && rvm env --path)"
             printf '%s\n' "source $ruby_path" >> $BASH_ENV
           environment:
             PARAM_VERSION: << parameters.version >>
