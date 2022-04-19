@@ -12,7 +12,7 @@ jobs:
       - checkout
       - run:
           name: "Read ruby version"
-          command: echo 'export RUBY_VERSION="$(cat .ruby-version)"' >> $BASH_ENV
+          command: echo 'export RUBY_VERSION="$(cat test/.ruby-version)"' >> $BASH_ENV
       - run:
           name: "Sanity Check"
           command: printenv RUBY_VERSION
