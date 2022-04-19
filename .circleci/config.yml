@@ -88,14 +88,8 @@ jobs:
     resource_class: medium
     steps:
       - checkout
-      - run:
-          name: "Read ruby version"
-          command: echo 'export RUBY_VERSION="$(cat test/.ruby-version)"' >> $BASH_ENV
-      - run:
-          name: "Sanity Check"
-          command: printenv RUBY_VERSION
       - ruby-install:
-          version: '${RUBY_VERSION}'
+          version: '$(cat test/.ruby-version)'
       - run:
           name: Check installed version
           command: |
